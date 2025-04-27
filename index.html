@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Violence contre les enfants au Liban</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #f5f7fa, #c3cfe2);
+      color: #333;
+      overflow-x: hidden;
+    }
+    header {
+      background-color: #b30000;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+      animation: fadeIn 1.5s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1, h2, h3 {
+      margin-bottom: 15px;
+    }
+    p, ul li {
+      line-height: 1.7;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .gallery img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+    .popup-content {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 600px;
+      text-align: center;
+    }
+    .close {
+      margin-top: 20px;
+      background: #b30000;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 15px;
+      margin-top: 30px;
+    }
+    .form-section {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      margin-top: 50px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input, textarea {
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    button.submit-btn {
+      background: #b30000;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    footer {
+      background: #b30000;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Stop à la violence contre les enfants au Liban</h1>
+    <p>"Chaque enfant mérite amour, respect et protection."</p>
+  </header>
+
+  <section>
+    <h2>Définition</h2>
+    <p>La violence contre les enfants englobe tout acte qui cause un préjudice physique, émotionnel ou psychologique. Cela inclut la maltraitance physique, les abus sexuels, la négligence, et la violence psychologique.</p>
+
+    <h2>La situation au Liban</h2>
+    <p>Au Liban, les crises économiques, politiques et sociales ont intensifié la vulnérabilité des enfants :</p>
+    <ul>
+      <li>En 2024, plus de <strong>78%</strong> des familles n'arrivent pas à subvenir aux besoins essentiels de leurs enfants (UNICEF).</li>
+      <li>Les cas de travail des enfants ont augmenté de <strong>35%</strong> depuis 2019.</li>
+      <li>Près de <strong>15%</strong> des enfants subissent des violences physiques régulières à la maison.</li>
+      <li>De nombreux enfants réfugiés vivent sans accès à l'éducation, exposés à la mendicité forcée et à l'exploitation.</li>
+    </ul>
+
+    <h2>Associations qui agissent</h2>
+    <ul>
+      <li><strong>Himaya</strong> : Protection de l'enfance - Tél : +961 3 414 964</li>
+      <li><strong>KAFA</strong> (Assez de Violence et d'Exploitation) - Tél : +961 1 392 220</li>
+      <li><strong>UNICEF Liban</strong> : Programmes de protection et d'éducation pour les enfants vulnérables.</li>
+    </ul>
+
+    <h2>Images à explorer</h2>
+    <div class="gallery">
+      <img src="https://www.humanrights.ch/cms/cache/35df828bfbb508908c021ae0025918bd.png" alt="Violence domestique" onclick="openPopup('La violence domestique touche 1 enfant sur 4 au Liban.')">
+      <img src="https://www.unicef.fr/wp-content/uploads/2022/08/travail-des-enfants-unicef.jpeg.webp" alt="Travail des enfants" onclick="openPopup('Près de 12% des enfants au Liban sont forcés de travailler.')">
+      <img src="https://www.ihemi.fr/sites/default/files/evenements/images/2023-08/ihemi_rvr_post_09-2023.jpg" alt="Exploitation" onclick="openPopup('Beaucoup d\'enfants sont victimes d\'exploitation sexuelle et de traite.')">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFQmZCM1XBrndSBgw6WpZc1IGi785Ig4G_gg&s" alt="Education" onclick="openPopup('Près de 35% des enfants ne fréquentent plus l\u2019\u00e9cole.')">
+    </div>
+
+    <div class="form-section">
+      <h2>S'engager pour changer</h2>
+      <form>
+        <input type="text" placeholder="Votre nom" required>
+        <input type="email" placeholder="Votre email" required>
+        <textarea placeholder="Votre message ou engagement..." rows="5" required></textarea>
+        <button type="submit" class="submit-btn">Envoyer</button>
+      </form>
+    </div>
+  </section>
+
+  <div class="popup" id="popup">
+    <div class="popup-content" id="popup-content">
+      <p>Texte ici</p>
+      <button class="close" onclick="closePopup()">Fermer</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>Ensemble, nous pouvons mettre fin à la souffrance des enfants. Agissons maintenant.</p>
+  </footer>
+
+  <script>
+    function openPopup(text) {
+      document.getElementById('popup-content').querySelector('p').textContent = text;
+      document.getElementById('popup').style.display = 'flex';
+    }
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
